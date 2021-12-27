@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-group row ml-2">
+        <h1>Albums de {{ artist.name }}</h1>
+        {% if app.user %}
+            <a href="{{ path('album_new', {id: artist.id}) }}">
+                <span class="material-icons text-success">fiber_new</span>
+            </a>
+        {% endif %}
+    </div>
+    <ul>
+        {% for album in albums %}
+            <li>
+                <a href="{{ path('tracks', {id: album.id}) }}">
+                    {{ album.name }}
+                </a>
+                {% if app.user %}
+                    <a href="{{ path('album_edit', {id: album.id}) }}">
+                        <span class="material-icons text-warning">edit</span>
+                    </a>
+                    <a href="{{ path('album_delete', {id: album.id}) }}">
+                        <span class="material-icons text-danger">delete_forever</span>
+                    </a>
+                {% endif %}
+            </li>
+        {% else %}
+            <li><em>Aucun album...</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+    Albums de {{ artist.name }}
+{% endblock %}
+

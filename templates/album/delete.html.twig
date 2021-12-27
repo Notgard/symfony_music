@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Suppression de l'album "{{ albumName }}"
+{% endblock %}
+
+{% block body %}
+    <div class="d-flex flex-row justify-content-center mt-5">
+        {{ form_start(form) }}
+            {{ form_row(form.yes, {'label': 'Supprimer', 'attr': {'class': 'btn btn-danger'}}) }}
+            {{ form_row(form.no, {'label': 'Annuler', 'attr': {'class': 'btn btn-success p-3 ml-1'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

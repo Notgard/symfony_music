@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="d-flex flex-row">
+        <img src="data:image/png;base64,{{ image }}" alt="Couverture de l'album" class="rounded-circle"/>
+        <h1>Morceaux de "{{ album.name }}" de l'artiste {{ album.artist.name }}</h1>
+    </div>
+    <ul>
+    {% for track in tracks %}
+        <li>{{ track.number }} - {{ track.song.name }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+{{ album.name }} de {{ album.artist.name }}
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for i in 0..9 %}
+        {% set oddOrEven = cycle(['odd', 'even'], loop.index0) %}
+        {% if oddOrEven == 'odd' %}
+            <h1 style="color:red;">Hello {{ name |capitalize}}!</h1>
+        {% else %}
+            <h1 style="color:blue;">Hello {{ name |capitalize}}!</h1>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+    Hi
+{% endblock %}
+

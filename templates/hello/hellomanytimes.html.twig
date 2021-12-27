@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello many times!
+{% endblock %}
+{% block body %}
+    {% for i in 0..times-1 %}
+        <h1>{{ name }} &times;{{ times }}</h1>
+    {% endfor %}
+{% endblock %}
+

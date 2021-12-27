@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+{% for artist in artists %}
+    <li>
+    <a href="{{ path('albums', {artistId: artist.id}) }}">
+        {{ artist.name }}
+    </a>
+    </li>
+{% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+Liste des artistes
+{% endblock %}
+

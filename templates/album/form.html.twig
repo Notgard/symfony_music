@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{form_start(form) }}
+    {{ form_errors(form) }}
+        {{ form_row(form.name, {'label': "Nom de l'album", 'attr': {'class': 'w-25'}}) }}
+        {{ form_row(form.year, {'label': "Année de sortie de l'album", 'attr': {'class': 'w-25'}}) }}
+        {{ form_row(form.artist, {'label': "Nom de l'artiste", 'attr': {'class': 'w-25'}}) }}
+        {{ form_row(form.genre, {'label': "Genre de l'album", 'attr': {'class': 'w-25'}}) }}
+        {{ form_row(form.submit, {'label': label_submit}) }}
+    {{ form_end(form) }}
+    {{ dump(form) }}
+{% endblock %}
+
+{% block title %}
+    Édition de l'album {{ form.vars.value.name }}
+{% endblock %}
+

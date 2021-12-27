@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Création d'un nouvelle album
+{% endblock %}
+
+{% block body %}
+    {{form_start(form) }}
+    {{ form_errors(form.name) }}
+        {{ form_row(form.name, {'attr': {'placeholder': 'Metallica'}, 'label': "Nom de l'album"}) }}
+        {{ form_row(form.year, {'label': "Année de sortie de l'album"}) }}
+        {{ form_row(form.artist, {'label': "Nom de l'artiste"}) }}
+        {{ form_row(form.genre, {'label': "Genre de l'album"}) }}
+        {{ form_row(form.submit, {'label': 'Ajouter'}) }}
+    {{ form_end(form) }}
+    {{ dump(form) }}
+{% endblock %}
+
